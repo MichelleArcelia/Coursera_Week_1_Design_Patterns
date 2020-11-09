@@ -1,5 +1,7 @@
 
 public class Song implements IComponent {
+
+//----------------------- VARIABLES ------------------------
 	
 	public String songName;
 	
@@ -7,7 +9,7 @@ public class Song implements IComponent {
 	
 	public float speed = 1; // Default playback speed
 	
-	
+//-------------------------- SONG -------------------------	
 
 	public Song(String songName, String artist ) {
 		
@@ -16,28 +18,35 @@ public class Song implements IComponent {
 		this.artist = artist; 
 	}
 	
+//------------------------- PLAY ---------------------------	
 	
 	public void play() {
 		
 		System.out.println("Play the song: " + this.songName);
 	}
 	
+//---------------------- GET NAME -------------------------	
 	
 	public String getName(){
 		
 		return this.songName;
 	}
+	
+//--------------------- GET ARTIST -------------------------	
 
 	public String getArtist(){
 		
 		return this.artist;
 	}
-
 	
+//------------------ SET PLAYBACK SPEED -------------------	
+
 	public void setPlaybackSpeed(float fasterSpeed) {
 		
 		this.speed = fasterSpeed;
 	}
+	
+//------------------- SET BACK BACK SPEED -----------------	
 
 	@Override
 	public void setBackbackSpeed(float speed) {

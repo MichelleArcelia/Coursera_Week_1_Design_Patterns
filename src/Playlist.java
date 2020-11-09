@@ -1,13 +1,16 @@
 import java.util.ArrayList;
 
-//-----------------------PLAYLIST----------------------------
+
 
 	public class Playlist implements IComponent {
 
 		public String playlistName;
 		
-		public ArrayList<IComponent> playlist = new ArrayList<IComponent>();
+		public ArrayList<IComponent> playlist = new ArrayList();
 
+
+//-----------------------PLAYLIST----------------------------
+	
 		public Playlist(String playlistName) {
 			
 			this.playlistName = playlistName;
@@ -17,20 +20,17 @@ import java.util.ArrayList;
 		
 	  public void play() {
 		  
-		  for(IComponent song: this.playlist) {
+		  for(int i = 0; i < playlist.size(); i++) {
 			  
-			  song.play();
+			  playlist.get(i).play();
 		  }
 	  }
 	  
 //-------------------SET PLAYBACK SPEED-----------------------
 
-	  public void setPlaybackSpeed(float speed) {
+	  public void setPlaybackSpeed(float slowSpeed) {
 		  
-		  for(IComponent song: this.playlist) {
-			  
-			  song.setBackbackSpeed(speed);
-		  }
+		  
 	  }
 
 //-----------------------GET NAME----------------------------
@@ -40,30 +40,33 @@ import java.util.ArrayList;
 		  return playlistName;
 	  }
 	
-//-------------------------ADD-------------------------------	  
+//-------------------------ADD SONG---------------------------	  
 	  
-	  public void add(IComponent component) {
+	  public void add(Song experimentalSong1) {
 		  
-		  playlist.add(component);
+		  playlist.add(experimentalSong1);
+		  
 	  }
 	  
-//-----------------------REMOVE----------------------------
+//----------------------ADD PLAYLIST---------------------------	  
 	  
-	  public void remove(IComponent component){
-			playlist.remove(component);
-	  }
-
+	  public void add(Playlist experimentalPlaylist) {
+		  
+		  playlist.add(experimentalPlaylist);
+		  
+	  }	  
 
 	
-
-
-	  //---------------- ADDED TO FIX ERROR IN PLAYLIST---------------
-//The type Playlist must implement the inherited abstract method IComponent.setBackbackSpeed(float)
-	  
+//-------------------SET PLAY BACK SPEED-------------------
 
 	@Override
+	
 	public void setBackbackSpeed(float speed) {
-		// TODO Auto-generated method stub
+		
+		for(int i = 0; i < playlist.size(); i++) {
+			
+			playlist.get(i).setBackbackSpeed(speed);
+		}
 	}
 	  
 

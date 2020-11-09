@@ -6,6 +6,8 @@ public class Song implements IComponent {
 	public String artist;
 	
 	public float speed = 1; // Default playback speed
+	
+	
 
 	public Song(String songName, String artist ) {
 		
@@ -16,22 +18,31 @@ public class Song implements IComponent {
 	
 	
 	public void play() {
+		
 		System.out.println("Play the song: " + this.songName);
 	}
 	
 	
 	public String getName(){
-		return songName;
+		
+		return this.songName;
 	}
 
 	public String getArtist(){
-		return artist;
+		
+		return this.artist;
 	}
 
+	
+	public void setPlaybackSpeed(float fasterSpeed) {
+		
+		this.speed = fasterSpeed;
+	}
 
 	@Override
 	public void setBackbackSpeed(float speed) {
-		// TODO Auto-generated method stub
+		
+		this.speed = speed;
 		
 	}
 

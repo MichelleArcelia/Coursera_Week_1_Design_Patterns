@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+//-----------------------PLAYLIST----------------------------
+
 	public class Playlist implements IComponent {
 
 		public String playlistName;
@@ -11,6 +13,8 @@ import java.util.ArrayList;
 			this.playlistName = playlistName;
 		}
 
+//-------------------------PLAY-------------------------------
+		
 	  public void play() {
 		  
 		  for(IComponent song: this.playlist) {
@@ -18,6 +22,8 @@ import java.util.ArrayList;
 			  song.play();
 		  }
 	  }
+	  
+//-------------------SET PLAYBACK SPEED-----------------------
 
 	  public void setPlaybackSpeed(float speed) {
 		  
@@ -26,29 +32,39 @@ import java.util.ArrayList;
 			  song.setBackbackSpeed(speed);
 		  }
 	  }
+
+//-----------------------GET NAME----------------------------
 	  
 	  public String getName() {
 		  
 		  return playlistName;
 	  }
-	  
+	
+//-------------------------ADD-------------------------------	  
 	  
 	  public void add(IComponent component) {
 		  
 		  playlist.add(component);
 	  }
 	  
-
+//-----------------------REMOVE----------------------------
+	  
 	  public void remove(IComponent component){
 			playlist.remove(component);
 	  }
 
+
+	
+
+
+	  //---------------- ADDED TO FIX ERROR IN PLAYLIST---------------
+//The type Playlist must implement the inherited abstract method IComponent.setBackbackSpeed(float)
+	  
+
 	@Override
 	public void setBackbackSpeed(float speed) {
 		// TODO Auto-generated method stub
-		
 	}
-	  
 	  
 
 	}
